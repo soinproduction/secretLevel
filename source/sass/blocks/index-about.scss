@@ -1,0 +1,45 @@
+.index-about {
+  background-color: var(--about-bg);
+  padding-top: clamp(40px, 6.417vw, 77px);
+  padding-bottom: clamp(40px, 6.667vw, 80px);
+
+  &__box {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: clamp(100px, 23.75vw, 285px);
+      height: clamp(100px, 23.75vw, 285px);
+      background-image: var(--about-icon);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      right: 0;
+      top: 15%;
+    }
+  }
+
+  &__article {
+    max-width: Min(72vw, 500px);
+  }
+
+  &__title {
+    margin-bottom: clamp(25px,3.333vw,40px);
+  }
+
+  &__text {
+    font-family: var(--font-family3);
+    font-style: normal;
+    font-weight: 400;
+    font-size: clamp(16px, 1.5vw, 18px);
+    line-height: 156%;
+    color: var(--color-a);
+
+    & + & {
+      margin-top: clamp(15px, 2.5vw, 30px);
+    }
+  }
+}
+
+
