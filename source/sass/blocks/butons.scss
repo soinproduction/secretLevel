@@ -1,0 +1,39 @@
+
+
+.link-mask {
+  width: clamp(120px, 13.333vw, 160px);
+  height: clamp(30px, 3.75vw, 45px);
+  position: relative;
+  z-index: 0;
+  font-family: var(--font-family2);
+  font-style: normal;
+  font-weight: 700;
+  font-size: clamp(16px, 1.5vw, 18px);
+  line-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--color-d);
+  transition: all .4s;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 48%;
+    background: var(--link-mask);
+    background-size: 105% 133%;
+    background-position: center -5px;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+}

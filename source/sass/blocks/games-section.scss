@@ -1,0 +1,90 @@
+.games-section {
+  padding-top: clamp(40px, 6.25vw, 75px);
+  background-color: var(--about-bg-alt);
+  padding-bottom: 10px;
+
+  &__top {
+    margin-bottom: clamp(20px, 4vw, 48px);
+  }
+
+  &__list-item {
+    padding: clamp(15px, 2.5vw, 30px) clamp(15px, 2.667vw, 32px);
+    background-color: var(--header-bg);
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: clamp(135px, 23.75vw, 285px) 1fr;
+    grid-gap: clamp(15px, 2.5vw, 30px);
+
+    .games-section__coming {
+      display: none;
+    }
+    .games-section__list-link {
+      display: flex;
+    }
+  }
+
+  &__list-item--coming {
+    .games-section__list-link {
+      display: none;
+    }
+    .games-section__coming {
+      display: flex;
+    }
+  }
+
+  &__info {
+    flex-grow: 1;
+    margin-bottom: clamp(10px, 1.667vw, 20px);
+
+    &-item {
+      font-family: var(--font-family);
+      font-style: normal;
+      font-size: 16px;
+      line-height: 175%;
+      color: var(--color-a);
+      opacity: 0.8;
+    }
+
+    &-name {
+      font-weight: 400;
+    }
+
+    &-value {
+      font-weight: 700;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+
+    &-descr {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-title {
+      font-family: var(--font-family2);
+      font-style: normal;
+      font-weight: 700;
+      font-size: clamp(18px, 2.667vw, 32px);
+      line-height: 172%;
+      color: var(--color-a);
+    }
+  }
+
+  &__coming {
+    font-family: var(--font-family);
+    font-style: normal;
+    font-size: 16px;
+    line-height: 175%;
+    color: var(--color-a);
+    opacity: 0.5;
+  }
+
+  &__icon {
+    width: 100%;
+    height: auto;
+  }
+}

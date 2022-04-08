@@ -1,3 +1,36 @@
+// let spacer = getComputedStyle(document.documentElement).getPropertyValue('--test')
+
+
+let roadSlider = new Swiper(".roadmap-section__box", {
+    slidesPerView: 4,
+    spaceBetween: 70,
+    // loop: true,
+    // speed: 8000,
+    // autoplay: {
+    //   delay: 0,
+    // },
+    navigation: {
+      nextEl: ".roadmap-section__prev",
+      prevEl: "  .roadmap-section__next"
+
+
+    },
+    // breakpoints: {
+    //   320: {
+    //     slidesPerView: 3,
+    //     spaceBetween: 10,
+    //   },
+    //   576: {
+    //     slidesPerView: 4,
+    //     spaceBetween: 15,
+    //   },
+    //   768: {
+    //     slidesPerView: 5,
+    //     spaceBetween: 15,
+    //   },
+    // },
+});
+
 
 
 

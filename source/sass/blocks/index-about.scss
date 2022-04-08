@@ -1,7 +1,33 @@
 .index-about {
-  background-color: var(--about-bg);
-  padding-top: clamp(40px, 6.417vw, 77px);
-  padding-bottom: clamp(40px, 6.667vw, 80px);
+
+  &__top {
+    background-color: var(--about-bg);
+    padding-top: clamp(40px, 6.417vw, 77px);
+    padding-bottom: clamp(40px, 6.667vw, 80px);
+    position: relative;
+    z-index: 1;
+  }
+
+  &__bottom {
+    padding-top: clamp(40px, 6.667vw, 80px);
+    padding-bottom: clamp(40px, 6.25vw, 75px);
+    background-color: var(--about-bg-alt);
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      left: -30%;
+      background-color: var(--about-round-color);
+      border-radius: 50%;
+      opacity: 0.2;
+      filter: blur(300px);
+      width: clamp(300px,83.333vw, 1000px);
+      height: clamp(300px,83.333vw, 1000px);
+      z-index: 0;
+    }
+  }
 
   &__box {
     position: relative;
@@ -38,6 +64,66 @@
 
     & + & {
       margin-top: clamp(15px, 2.5vw, 30px);
+    }
+  }
+
+  &__about {
+    display: flex;
+    text-align: center;
+    font-family: var( --font-family2);
+    font-style: normal;
+    font-weight: 400;
+    font-size: clamp(18px, 2.667vw,32px);
+    padding: clamp(30px, 5.167vw, 62px) clamp(20px, 6.667vw, 80px);
+    line-height: 130%;
+    color: var(--color-b);
+    border: 1px solid currentColor;
+    border-radius: 30px;
+    margin-bottom: clamp(20px, 3.083vw, 37px);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 20px;
+
+    &-item {
+      background: var(--about-bg);
+      border-radius: 30px;
+      padding: clamp(20px, 3.333vw, 40px) clamp(15px, 5.333vw, 64px);
+      display: grid;
+      grid-template-columns: clamp(60px, 15vw, 180px) 1fr;
+      grid-gap: clamp(30px, 5.167vw, 62px);
+      align-items: center;
+    }
+
+    &-icon {
+      width: 100%;
+      height: auto;
+    }
+
+    &-descr {
+      display: flex;
+      flex-direction: column;
+      grid-gap: 20px;
+    }
+
+    &-title {
+      font-family: var(--font-family2);
+      font-style: normal;
+      font-weight: 700;
+      font-size: clamp(22px, 3vw, 36px);
+      line-height: clamp(22px, 3vw, 36px);
+      color: var(--color-a);
+    }
+
+    &-text {
+      font-family: var(--font-family);
+      font-style: normal;
+      font-weight: 300;
+      font-size: clamp(15px, 1.5vw, 18px);
+      line-height: 156%;
+      color: var(--color-c);
     }
   }
 }
