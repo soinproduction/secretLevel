@@ -1,0 +1,44 @@
+
+.big-slider {
+  max-width: 100%;
+  margin-bottom: 10px;
+  border-radius: 10px 0 0 0;
+
+  &__image {
+    display: flex;
+  }
+
+  .swiper-slide {
+    cursor: pointer;
+  }
+
+  &__image, &__image  * {
+    max-height: 450px;
+    height: 100%;
+    border-radius: 10px 0 0 0;
+  }
+}
+
+
+.mini-slider {
+  max-width: 100%;
+  padding-bottom: 6px;
+
+  .swiper-slide {
+    border: 3px solid rgba(255, 255, 255, 0);
+    cursor: pointer;
+  }
+
+  .swiper-slide-thumb-active {
+    border-color: #fff;
+  }
+
+  &__image, &__image  * {
+    max-height: 88px;
+    height: 100%;
+  }
+
+  &__image {
+    display: flex;
+  }
+}

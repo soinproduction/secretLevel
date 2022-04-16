@@ -1,0 +1,59 @@
+.diagram-list {
+  display: flex;
+  flex-direction: column;
+  grid-gap: clamp(20px, 3.75vw, 45px);
+  position: relative;
+  z-index: 2;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    grid-gap: clamp(15px, 1.667vw, 20px);
+  }
+
+  &__value {
+    font-family: var(--font-family2);
+    font-style: normal;
+    font-weight: 700;
+    font-size: clamp(20px, 3.5vw, 42px);
+    line-height: 100%;
+    color: var(--color-a);
+
+    &--a {
+      color: var(--diagram-list--a);
+    }
+
+    &--b {
+      color: var(--diagram-list--b);
+    }
+
+    &--c {
+      color: var(--diagram-list--c);
+    }
+
+    &--d {
+      color: var(--diagram-list--d);
+    }
+
+    &--e {
+      color: var(--diagram-list--e);
+    }
+
+    &--f {
+      color: var(--diagram-list--f);
+    }
+
+    &--g {
+      color: var(--diagram-list--g);
+    }
+  }
+
+  &__name {
+    font-family: var(--font-family);
+    font-style: normal;
+    font-weight: 400;
+    font-size: clamp(16px, 1.667vw, 20px);
+    line-height: 100%;
+    color: var(--color-a);
+  }
+}

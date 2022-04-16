@@ -1,0 +1,18 @@
+.social-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-gap: clamp(30px, 3.833vw, 46px);
+
+  &__icon {
+    fill: #576477;
+    transition: all .4s;
+  }
+
+  &__item:hover {
+    .social-list__icon {
+      fill: #fff;
+      transform: scale(1.1);
+    }
+  }
+}

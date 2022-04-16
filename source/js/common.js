@@ -11,7 +11,7 @@ let roadSlider = new Swiper(".roadmap-section__box", {
     // },
     navigation: {
       nextEl: ".roadmap-section__prev",
-      prevEl: "  .roadmap-section__next"
+      prevEl: ".roadmap-section__next"
 
 
     },
@@ -102,5 +102,37 @@ let roadSlider = new Swiper(".roadmap-section__box", {
 // 	}
 // });
 
+let singleSliderBottom = new Swiper(".mini-slider", {
+  slidesPerView: 5,
+  spaceBetween: 3,
+  watchSlidesProgress: true,
+  slideToClickedSlide: false,
+  // breakpoints: {
+  //   320: {
+  //     slidesPerView: 4,
+  //     spaceBetween: 10,
+  //   },
+  //   576: {
+  //     slidesPerView: 3,
+  //     spaceBetween: 15,
+  //   },
+  //   1240: {
+  //     slidesPerView: "auto",
+  //     spaceBetween: 15,
+  //   },
+  // },
+});
+
+let singleSliderTop = new Swiper(".big-slider", {
+  slidesPerView: 1,
+  spaceBetween: 10,
+  thumbs: {
+    swiper: singleSliderBottom,
+  },
+  // navigation: {
+  //   nextEl: ".single-card__slider-next",
+  //   prevEl: ".single-card__slider-prev",
+  // },
+});
 
 

@@ -1,0 +1,43 @@
+.single-first {
+  padding-top:clamp(100px, 10.583vw, 127px) ;
+  padding-bottom: clamp(30px, 6.25vw, 75px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: var(--single-bg);
+
+  &__top {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-bottom: clamp(20px, 3.333vw, 40px);
+  }
+
+  &__back {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__box {
+    background: var(--header-bg);
+    border-radius: 10px;
+    padding-bottom: 13px;
+    display: grid;
+    grid-template-columns: clamp(575px, 66.667vw, 800px) 1fr;
+  }
+
+
+
+
+
+
+
+
+
+  @media screen and (max-width: 575px) {
+    .single-first__logo {
+      max-width: 85%;
+    }
+  }
+
+}

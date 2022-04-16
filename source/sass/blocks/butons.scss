@@ -37,3 +37,26 @@
     z-index: -1;
   }
 }
+
+.back-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  grid-gap: 5px;
+  font-family: var(--font-family);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  color: var(--color-a);
+  transition: all .4s;
+
+  &__icon {
+    fill: currentColor;
+  }
+
+  &:hover {
+    color: var(--color-f);
+  }
+}

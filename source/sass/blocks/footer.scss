@@ -1,0 +1,14 @@
+footer {
+  background: var(--footer-bg);
+  text-align: center;
+  padding: clamp(10px, 1.667vw, 20px) 0;
+}
+
+.footer-info {
+  font-family: var(--font-family);
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(14px, 1.333vw, 16px);
+  line-height: 100%;
+  color: var(--color-g);
+}
