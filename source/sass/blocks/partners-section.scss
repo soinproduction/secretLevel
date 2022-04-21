@@ -1,9 +1,13 @@
 .partners-section {
-  padding-top:clamp(40px, 8.083vw, 97px) ;
+  padding-top:clamp(25px, 8.083vw, 97px) ;
   padding-bottom: clamp(60px, 9.167vw, 110px);
   background-color: var( --token-bg);
 
   &__top {
     margin-bottom: clamp(30px, 4.167vw, 50px);
+  }
+
+  @media (max-width: 767px) {
+    padding-bottom: 5.215vw;
   }
 }

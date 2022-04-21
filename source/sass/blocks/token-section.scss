@@ -1,5 +1,5 @@
 .token-section {
-  padding: clamp(30px, 4.167vw, 50px) 0 clamp(100px, 16.667vw, 200px);
+  padding: clamp(30px, 4.167vw, 50px) 0 clamp(70px, 16.667vw, 200px);
   background-color: var(--token-bg);
 
   &__top {
@@ -46,22 +46,59 @@
     &-content {
       display: flex;
       align-items: center;
-      grid-gap: clamp(20px, 3.333vw, 40px);
+      grid-gap: clamp(30px, 3.333vw, 40px);
 
       .diagram-list:nth-child(1) {
         order: 1;
         align-items: flex-end;
         text-align: right;
+        grid-area: b;
       }
 
       .diagram-list:nth-child(2) {
         order: 3;
         align-items: flex-start;
         text-align: left;
+        grid-area: c;
       }
 
       .diagram-box {
         order: 2;
+        grid-area: a;
+      }
+
+      @media (max-width: 767px) {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: 100%;
+        grid-template-areas:
+        "a a"
+        "c c"
+        "b b";
+      }
+
+      @media (max-width: 575px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+        "a a"
+        "b c";
+      }
+
+      @media (min-width: 575px) and (max-width: 767px) {
+        .diagram-list:nth-child(1) {
+          flex-direction: row;
+          text-align: center;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .diagram-list:nth-child(2) {
+          flex-direction: row;
+          text-align: center;
+          justify-content: center;
+          align-items: center;
+        }
       }
     }
   }

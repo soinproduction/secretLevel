@@ -3,6 +3,10 @@
   padding-bottom: clamp(20px, 3.833vw, 46px);
   background-color: var( --token-bg);
 
+  @media (max-width: 767px) {
+    padding-top: 5.215vw;
+  }
+
   &__box {
     padding-top: clamp(30px, 5.25vw, 63px);
     padding-bottom: clamp(25px, 4.667vw, 56px);

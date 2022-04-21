@@ -1,126 +1,81 @@
-// let spacer = getComputedStyle(document.documentElement).getPropertyValue('--test')
-
-
 let roadSlider = new Swiper(".roadmap-section__box", {
     slidesPerView: 4,
     spaceBetween: 70,
-    // loop: true,
-    // speed: 8000,
-    // autoplay: {
-    //   delay: 0,
-    // },
     navigation: {
       nextEl: ".roadmap-section__prev",
       prevEl: ".roadmap-section__next"
-
-
     },
-    // breakpoints: {
-    //   320: {
-    //     slidesPerView: 3,
-    //     spaceBetween: 10,
-    //   },
-    //   576: {
-    //     slidesPerView: 4,
-    //     spaceBetween: 15,
-    //   },
-    //   768: {
-    //     slidesPerView: 5,
-    //     spaceBetween: 15,
-    //   },
-    // },
+    breakpoints: {
+      320: {
+        slidesPerView: "auto",
+        spaceBetween: 20,
+        centeredSlides: true,
+      },
+
+      575: {
+        slidesPerView: 2,
+        spaceBetween: 40,
+        centeredSlides: false,
+      },
+
+      767: {
+        slidesPerView: 3,
+        spaceBetween: 40,
+        centeredSlides: false,
+      },
+
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 70,
+        centeredSlides: false,
+      },
+
+      1240: {
+        slidesPerView: 4,
+        spaceBetween: 70,
+        centeredSlides: false,
+      },
+    },
 });
 
+let singleGame = new Swiper(".games-nav", {
+  slidesPerView: 2,
+  spaceBetween: 20,
+  autoHeight: true,
+  navigation: {
+    nextEl: ".other-games__next",
+    prevEl: ".other-games__prev",
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      autoHeight: true,
+    },
 
-
-
-// init sliders
-
-// (function () {
-//   "use strict";
-//   const breakpoint = window.matchMedia("(min-width:1024px)");
-//   let slider;
-
-//   const breakpointChecker = function () {
-//     if (breakpoint.matches === true) {
-//       if (slider !== undefined)
-//       slider.destroy(true, true);
-
-//       return;
-//     } else if (breakpoint.matches === false) {
-//       return enableSwiper();
-//     }
-//   };
-//   const enableSwiper = function () {
-//     slider = new Swiper(".index-logo__slider", {
-//       slidesPerView: 'auto',
-//       spaceBetween: 70,
-//       loop: true,
-//       speed: 8000,
-//       autoplay: {
-//         delay: 0,
-//       },
-//       // pagination: {
-//       //   el: ".swiper-pagination",
-//       // },
-//       // breakpoints: {
-//       //   320: {
-//       //     slidesPerView: 3,
-//       //     spaceBetween: 10,
-//       //   },
-//       //   576: {
-//       //     slidesPerView: 4,
-//       //     spaceBetween: 15,
-//       //   },
-//       //   768: {
-//       //     slidesPerView: 5,
-//       //     spaceBetween: 15,
-//       //   },
-//       // },
-//     });
-//   };
-
-//   breakpoint.addListener(breakpointChecker);
-//   breakpointChecker();
-// })();
-
-
-// закрытие по клику вне окна
-// if (overlay) {
-//   overlay.addEventListener('click', function(e) {
-//     e.stopPropagation();
-//     let curentTargetWrapper = document.querySelector('.modal-wrapper')
-//     if (event.target === curentTargetWrapper) {
-//       overlay.classList.remove('active');
-//     }
-//   })
-// }
-// // закрытие по Escape
-// document.addEventListener('keydown', function(e) {
-// 	if( e.keyCode == 27 ){
-// 		overlay.classList.remove('active');
-// 	}
-// });
+    1024: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    }
+  },
+});
 
 let singleSliderBottom = new Swiper(".mini-slider", {
   slidesPerView: 5,
   spaceBetween: 3,
   watchSlidesProgress: true,
   slideToClickedSlide: false,
-  // breakpoints: {
-  //   320: {
-  //     slidesPerView: 4,
-  //     spaceBetween: 10,
-  //   },
-  //   576: {
-  //     slidesPerView: 3,
-  //     spaceBetween: 15,
-  //   },
-  //   1240: {
-  //     slidesPerView: "auto",
-  //     spaceBetween: 15,
-  //   },
-  // },
+  breakpoints: {
+    320: {
+      slidesPerView: 3,
+      spaceBetween: 3,
+    },
+
+    414: {
+      slidesPerView: 5,
+      spaceBetween: 3,
+    }
+  },
 });
 
 let singleSliderTop = new Swiper(".big-slider", {
@@ -129,10 +84,49 @@ let singleSliderTop = new Swiper(".big-slider", {
   thumbs: {
     swiper: singleSliderBottom,
   },
-  // navigation: {
-  //   nextEl: ".single-card__slider-next",
-  //   prevEl: ".single-card__slider-prev",
-  // },
 });
+
+const burger = document.querySelector('.burger');
+const mobileMenu = document.querySelector('.header__nav');
+
+burger.onclick = addClassForMenu;
+function addClassForMenu() {
+  burger.classList.toggle('active');
+  mobileMenu.classList.toggle('active');
+  document.body.classList.toggle('active')
+}
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      document.querySelectorAll('.header__nav-link').forEach((link) =>{
+
+        if (link.getAttribute('href').replace('#', '') == entry.target.id) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      })
+    }
+  });
+}, {
+  threshold: 0.4
+});
+
+document.querySelectorAll('.section-observe').forEach((section) => observer.observe(section))
+
+if (document.querySelector('.header__nav-list--index')) {
+  document.querySelector('.header__nav-list--index').addEventListener('click', function(e){
+    if (e.target.classList.contains('header__nav-link')) {
+      e.preventDefault();
+      const id = e.target.getAttribute('href').replace('#', '');
+      let headerHeight = document.querySelector('header').clientHeight;
+      window.scrollTo({
+        top: document.getElementById(id).offsetTop - headerHeight,
+        behavior:"smooth"
+      })
+    }
+  })
+}
 
 

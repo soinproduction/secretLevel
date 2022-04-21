@@ -16,6 +16,20 @@ header {
     display: flex;
     align-items: center;
     grid-gap: clamp(30px, 5vw, 60px);
+
+    &--index a:before {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 3px;
+      background: #DAA10D;
+      box-shadow: 0px 0px 11px #FF0303;
+      left: 0;
+      right: 0;
+      bottom: -25px;
+      opacity: 0;
+      transition: all .4s;
+    }
   }
 
   &__nav-link {
@@ -29,17 +43,16 @@ header {
 
     &.active {
       &:before {
-        position: absolute;
-        content: '';
-        width: 100%;
-        height: 3px;
-        background: #DAA10D;
-        box-shadow: 0px 0px 11px #FF0303;
-        left: 0;
-        right: 0;
-        bottom: -25px;
+        opacity: 1;
       }
 
+    }
+  }
+
+
+  @media (max-width: 1024px) {
+    &__logo {
+      width: 180px;
     }
   }
 }

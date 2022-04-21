@@ -4,13 +4,17 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: Min(63.333vw, 760px);
+  min-height: clamp(500px,63.333vw, 760px);
   display: flex;
   align-items: flex-end;
   padding:  clamp(100px, 11.667vw, 140px)
             0
             clamp(30px, 4.167vw, 50px);
   position: relative;
+
+  @media (max-width: 700px) {
+    background-attachment: scroll;
+  }
 
   &::before {
     position: absolute;
